@@ -96,7 +96,7 @@ class ViewFilesController < ApplicationController
     auth.client_id = '1074600807391-9b98gs5d8k151pj6ajpf1q5i4cgkst1i.apps.googleusercontent.com'
     auth.client_secret = 'kgH8RYgPPL9GABLwCsdjJ3lx'
     auth.scope = "https://www.googleapis.com/auth/drive https://spreadsheets.google.com/feeds/"
-    auth.redirect_uri = 'http://localhost:3000/view_files/access_token'
+    auth.redirect_uri = 'http://ditommasoquinonesschwab-grupo8dssd/view_files/access_token'
     auth
   end
 
