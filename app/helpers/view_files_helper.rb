@@ -1,0 +1,2 @@
+module ViewFilesHelper
+end

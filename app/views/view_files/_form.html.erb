@@ -1,0 +1,17 @@
+<%= form_for(@view_file) do |f| %>
+  <% if @view_file.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@view_file.errors.count, "error") %> prohibited this view_file from being saved:</h2>
+
+      <ul>
+      <% @view_file.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
