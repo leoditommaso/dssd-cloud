@@ -12,7 +12,9 @@
   <tbody>
   <% @view_files.each do |view_file| %>
       <tr>
-        <td><a href="<%= view_file.web_content_link %>"><%= view_file.title %></a></td>
+        <td><a <% if view_file.mime_type == 'application/vnd.google-apps.folder' %>class="folder"
+               <% else %>class = "file"
+               <% end %> href="<%= view_file.web_content_link %>"><%= view_file.title %></a></td>
       </tr>
     <% end %>
   </tbody>
