@@ -11,11 +11,16 @@
 
   <tbody>
   <% @view_files.each do |view_file| %>
+      <% #if view_file.parents.first && view_file.parents.first["isRoot"] %>
       <tr>
-        <td><a <% if view_file.mime_type == 'application/vnd.google-apps.folder' %>class="folder"
-               <% else %>class = "file"
-               <% end %> href="<%= view_file.web_content_link %>"><%= view_file.title %></a></td>
+        <td><a <% if is_directory(view_file) %>
+                 class="folder"
+               <% else %>
+                 class = "file"
+               <% end %>
+                 href="<%= download_link_for(view_file) %>"><%= view_file.title %></a></td>
       </tr>
-    <% end %>
+      <% end %>
+    <% gend %>
   </tbody>
 </table>
